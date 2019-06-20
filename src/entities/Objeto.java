@@ -1,5 +1,7 @@
 package entities;
 
+import java.util.ArrayList;
+
 public class Objeto {
 
     private String destinatario;
@@ -31,7 +33,8 @@ public class Objeto {
     private String observacao_2;
     private String observacao_3;
     private Integer telefone_celular;
-
+    private DesObjeto desObjeto[];
+    
     public Objeto() {
     }
 
