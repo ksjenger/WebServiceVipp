@@ -15,30 +15,36 @@ public class Objeto {
     private String telefone;
     private String financeiro;
     private String registro;
-    private Integer peso;
-    private Integer altura;
-    private Integer largura;
-    private Integer comprimento;
-    private Integer cubico;
+    private String peso;
+    private String altura;
+    private String largura;
+    private String comprimento;
+    private String cubico;
     private String nota;
     private String serie_nota;
-    private Integer declarado;
-    private Integer valor_cobrar;
+    private String declarado;
+    private String valor_cobrar;
     private String adicionais;
-    private Integer contrato;
-    private Integer administrativo;
-    private Integer cartao;
+    private String contrato;
+    private String administrativo;
+    private String cartao;
     private String email;
     private String observacao_1;
     private String observacao_2;
     private String observacao_3;
-    private Integer telefone_celular;
-    private DesObjeto desObjeto[];
+    private String telefone_celular;
+    private ArrayList <DesObjeto> desObjeto;
     
     public Objeto() {
     }
 
-    public Objeto(String destinatario, String endereco, String numero, String complemento, String bairro, String cidade, String uf, String cep, String telefone, String financeiro, String registro, Integer peso, Integer altura, Integer largura, Integer comprimento, Integer cubico, String nota, String serie_nota, Integer declarado, Integer valor_cobrar, String adicionais, Integer contrato, Integer administrativo, Integer cartao, String email, String observacao_1, String observacao_2, String observacao_3, Integer telefone_celular) {
+    public Objeto(String destinatario, String endereco, String numero, String complemento, 
+            String bairro, String cidade, String uf, String cep, String telefone, String financeiro, 
+            String registro, String peso, String altura, String largura, String comprimento, 
+            String cubico, String nota, String serie_nota, String declarado, String valor_cobrar, 
+            String adicionais, String contrato, String administrativo, String cartao, String email, 
+            String observacao_1, String observacao_2, String observacao_3, String telefone_celular) {
+        
         this.destinatario = destinatario;
         this.endereco = endereco;
         this.numero = numero;
@@ -70,6 +76,21 @@ public class Objeto {
         this.telefone_celular = telefone_celular;
     }
 
+    public Objeto(String destinatario, String endereco, String numero, String complemento, 
+            String bairro, String cidade, String uf, String cep, String observacao_1) {
+        this.destinatario = destinatario;
+        this.endereco = endereco;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.uf = uf;
+        this.cep = cep;
+        this.observacao_1 = observacao_1;
+        }
+            
+    
+
     public String getDestinatario() {
         return destinatario;
     }
@@ -93,6 +114,15 @@ public class Objeto {
     public void setNumero(String numero) {
         this.numero = numero;
     }
+
+    public ArrayList<DesObjeto> getDesObjeto() {
+        return desObjeto;
+    }
+
+    public void setDesObjeto(ArrayList<DesObjeto> desObjeto) {
+        this.desObjeto = desObjeto;
+    }
+    
 
     public String getComplemento() {
         return complemento;
@@ -158,43 +188,43 @@ public class Objeto {
         this.registro = registro;
     }
 
-    public Integer getPeso() {
+    public String getPeso() {
         return peso;
     }
 
-    public void setPeso(Integer peso) {
+    public void setPeso(String peso) {
         this.peso = peso;
     }
 
-    public Integer getAltura() {
+    public String getAltura() {
         return altura;
     }
 
-    public void setAltura(Integer altura) {
+    public void setAltura(String altura) {
         this.altura = altura;
     }
 
-    public Integer getLargura() {
+    public String getLargura() {
         return largura;
     }
 
-    public void setLargura(Integer largura) {
+    public void setLargura(String largura) {
         this.largura = largura;
     }
 
-    public Integer getComprimento() {
+    public String getComprimento() {
         return comprimento;
     }
 
-    public void setComprimento(Integer comprimento) {
+    public void setComprimento(String comprimento) {
         this.comprimento = comprimento;
     }
 
-    public Integer getCubico() {
+    public String getCubico() {
         return cubico;
     }
 
-    public void setCubico(Integer cubico) {
+    public void setCubico(String cubico) {
         this.cubico = cubico;
     }
 
@@ -214,19 +244,19 @@ public class Objeto {
         this.serie_nota = serie_nota;
     }
 
-    public Integer getDeclarado() {
+    public String getDeclarado() {
         return declarado;
     }
 
-    public void setDeclarado(Integer declarado) {
+    public void setDeclarado(String declarado) {
         this.declarado = declarado;
     }
 
-    public Integer getValor_cobrar() {
+    public String getValor_cobrar() {
         return valor_cobrar;
     }
 
-    public void setValor_cobrar(Integer valor_cobrar) {
+    public void setValor_cobrar(String valor_cobrar) {
         this.valor_cobrar = valor_cobrar;
     }
 
@@ -238,27 +268,27 @@ public class Objeto {
         this.adicionais = adicionais;
     }
 
-    public Integer getContrato() {
+    public String getContrato() {
         return contrato;
     }
 
-    public void setContrato(Integer contrato) {
+    public void setContrato(String contrato) {
         this.contrato = contrato;
     }
 
-    public Integer getAdministrativo() {
+    public String getAdministrativo() {
         return administrativo;
     }
 
-    public void setAdministrativo(Integer administrativo) {
+    public void setAdministrativo(String administrativo) {
         this.administrativo = administrativo;
     }
 
-    public Integer getCartao() {
+    public String getCartao() {
         return cartao;
     }
 
-    public void setCartao(Integer cartao) {
+    public void setCartao(String cartao) {
         this.cartao = cartao;
     }
 
@@ -294,12 +324,20 @@ public class Objeto {
         this.observacao_3 = observacao_3;
     }
 
-    public Integer getTelefone_celular() {
+    public String getTelefone_celular() {
         return telefone_celular;
     }
 
-    public void setTelefone_celular(Integer telefone_celular) {
+    public void setTelefone_celular(String telefone_celular) {
         this.telefone_celular = telefone_celular;
     }
+
+    @Override
+    public String toString() {
+        return "Objeto{" + "destinatario=" + destinatario + ", endereco=" + endereco + ", numero=" + numero + ", complemento=" + complemento + ", bairro=" + bairro + ", cidade=" + cidade + ", uf=" + uf + ", cep=" + cep + ", observacao_1=" + observacao_1 + ", =" + desObjeto + '}';
+    }
+
+
+    
     
 }
