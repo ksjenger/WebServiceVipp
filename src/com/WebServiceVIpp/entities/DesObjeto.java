@@ -1,4 +1,4 @@
-package entities;
+package com.WebServiceVIpp.entities;
 
 public class DesObjeto {
 

@@ -1,4 +1,4 @@
-package entities;
+package com.WebServiceVIpp.entities;
 
 import java.util.ArrayList;
 

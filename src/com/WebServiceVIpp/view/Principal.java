@@ -1,7 +1,7 @@
-package view;
+package com.WebServiceVipp.view;
 
-import entities.DesObjeto;
-import entities.Objeto;
+import com.WebServiceVIpp.entities.DesObjeto;
+import com.WebServiceVIpp.entities.Objeto;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
