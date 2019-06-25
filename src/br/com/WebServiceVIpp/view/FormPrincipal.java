@@ -2,10 +2,15 @@ package br.com.WebServiceVIpp.view;
 
 import br.com.WebServiceVIpp.entities.ObjetoPostagem;
 import br.com.WebServiceVIpp.services.ImportarXlsx;
+import br.inf.visualset.PostagemRetorno;
+import br.inf.visualset.PostarObjetoResponse;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JFileChooser;
 
 public class FormPrincipal extends javax.swing.JFrame {
 
+    List<Object> lista = new ArrayList<>();
     ObjetoPostagem obj = new ObjetoPostagem();
     
     public FormPrincipal() {
@@ -50,8 +55,18 @@ public class FormPrincipal extends javax.swing.JFrame {
         files.showOpenDialog(files);
         files.getSelectedFile();
         String url = files.getSelectedFile().getPath();
-        obj = ImportarXlsx.ImportarXlsx(url);
-
+        PostarObjetoResponse.PostarObjetoResult resultObj = ImportarXlsx.ImportarXlsx(url);
+        
+        PostagemRetorno postagemRetorno = new PostagemRetorno();
+               
+        
+        System.out.println("mensage: " + postagemRetorno.getStatusPostagem() + "Nome: " + postagemRetorno.getDestinatario());
+        
+        /*lista = resultObj.getContent();
+        for(Object li : lista){
+            System.out.println(li.toString());
+        }*/
+        System.out.println(resultObj.toString());
         
     }//GEN-LAST:event_btnImportarActionPerformed
 

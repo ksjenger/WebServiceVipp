@@ -2,6 +2,16 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/kauan/Desktop/WebServiceVipp/src/br/com/WebServiceVIpp/entities/DesObjeto.java</file>
+            <file>file:/C:/Users/kauan/Desktop/WebServiceVipp/src/br/com/WebServiceVIpp/services/SendRequest.java</file>
+            <file>file:/C:/Users/kauan/Desktop/WebServiceVipp/src/br/com/WebServiceVIpp/services/ImportarXlsx.java</file>
+            <file>file:/C:/Users/kauan/Desktop/WebServiceVipp/build/generated-sources/jax-ws/br/inf/visualset/PostarObjetoResponse.java</file>
+            <file>file:/C:/Users/kauan/Desktop/WebServiceVipp/build/generated-sources/jax-ws/br/inf/visualset/PostagemVipp.java</file>
+            <file>file:/C:/Users/kauan/Desktop/WebServiceVipp/src/br/com/WebServiceVIpp/view/FormPrincipal.java</file>
+            <file>file:/C:/Users/kauan/Desktop/WebServiceVipp/src/br/com/WebServiceVIpp/entities/ObjetoPostagem.java</file>
+            <file>file:/C:/Users/kauan/Desktop/WebServiceVipp/build/generated-sources/jax-ws/br/inf/visualset/PostagemVippSoap.java</file>
+            <file>file:/C:/Users/kauan/Desktop/WebServiceVipp/build/generated-sources/jax-ws/br/inf/visualset/PostagemRetorno.java</file>
+        </group>
     </open-files>
 </project-private>

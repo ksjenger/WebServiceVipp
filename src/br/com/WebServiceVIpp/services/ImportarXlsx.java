@@ -1,6 +1,5 @@
 package br.com.WebServiceVIpp.services;
 
-import br.inf.visualset.Postagem;
 import br.com.WebServiceVIpp.entities.DesObjeto;
 import br.com.WebServiceVIpp.entities.ObjetoPostagem;
 import br.com.WebServiceVIpp.view.FormPrincipal;
@@ -20,10 +19,11 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ImportarXlsx {
 
-    public static ObjetoPostagem ImportarXlsx(String url) {
+    public static PostarObjetoResponse.PostarObjetoResult ImportarXlsx(String url) {
 
         ObjetoPostagem obj = new ObjetoPostagem();
         ArrayList<DesObjeto> conteudo = new ArrayList<>();
+        PostarObjetoResponse.PostarObjetoResult resultObj = null;
 
         File file = new File(url);
         try {
@@ -52,7 +52,7 @@ public class ImportarXlsx {
                     Iterator<Cell> cellInterator = row.iterator();
 
                     String observacao_1 = null, desObj, destinatario = null, endereco = null,
-                            bairro = null, complemento = null, cep = null, cidade = null, 
+                            bairro = null, complemento = null, cep = null, cidade = null,
                             uf = null, numero = null;
 
                     boolean temp = true;
@@ -72,9 +72,9 @@ public class ImportarXlsx {
                                         temp = false;
                                     }
                                 }
-                                    break;                            
-                        
-                        case 11:
+                                break;
+
+                            case 11:
                                 desObj = "" + cell.getStringCellValue();
                                 if (observacao_1 != null) {
                                     if (observacao_1.equals(obj.getObservacao_1())) {
@@ -122,27 +122,26 @@ public class ImportarXlsx {
                         }
                     }
                     if (temp) {
-                            obj = new ObjetoPostagem(destinatario, endereco, numero, complemento,
-                                    bairro, cidade, uf, cep, observacao_1);
-                            obj.setDesObjeto(conteudo);
-                        } else {
-                            obj.setDesObjeto(conteudo);
-                        }
-                        
-                        SendRequest.setDestinatario(obj);
-                        SendRequest sd = new SendRequest();
-                        sd.setPostagemVipp();
-                        System.out.println(obj.toString());
+                        obj = new ObjetoPostagem(destinatario, endereco, numero, complemento,
+                                bairro, cidade, uf, cep, observacao_1);
+                        obj.setDesObjeto(conteudo);
+                    } else {
+                        obj.setDesObjeto(conteudo);
                     }
+
+                    SendRequest.setDestinatario(obj);
+                    resultObj = SendRequest.setPostagemVipp();
+                    System.out.println(obj.toString());
                 }
+            }
 
-            }catch (FileNotFoundException ex) {
+        } catch (FileNotFoundException ex) {
             Logger.getLogger(FormPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-        }catch (IOException ex) {
+        } catch (IOException ex) {
             Logger.getLogger(FormPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-            return obj;
-        }
-
+        return resultObj;
     }
+
+}
