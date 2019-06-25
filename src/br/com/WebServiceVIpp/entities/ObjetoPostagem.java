@@ -1,8 +1,8 @@
-package com.WebServiceVIpp.entities;
+package br.com.WebServiceVIpp.entities;
 
 import java.util.ArrayList;
 
-public class Objeto {
+public class ObjetoPostagem {
 
     private String destinatario;
     private String endereco;
@@ -35,10 +35,10 @@ public class Objeto {
     private String telefone_celular;
     private ArrayList <DesObjeto> desObjeto;
     
-    public Objeto() {
+    public ObjetoPostagem() {
     }
 
-    public Objeto(String destinatario, String endereco, String numero, String complemento, 
+    public ObjetoPostagem(String destinatario, String endereco, String numero, String complemento, 
             String bairro, String cidade, String uf, String cep, String telefone, String financeiro, 
             String registro, String peso, String altura, String largura, String comprimento, 
             String cubico, String nota, String serie_nota, String declarado, String valor_cobrar, 
@@ -76,7 +76,7 @@ public class Objeto {
         this.telefone_celular = telefone_celular;
     }
 
-    public Objeto(String destinatario, String endereco, String numero, String complemento, 
+    public ObjetoPostagem(String destinatario, String endereco, String numero, String complemento, 
             String bairro, String cidade, String uf, String cep, String observacao_1) {
         this.destinatario = destinatario;
         this.endereco = endereco;
